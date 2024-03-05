@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:01:30 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/05 01:11:15 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/05 02:51:57 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,19 @@
 # include <fcntl.h>
 typedef struct s_list
 {
+	void *mlx; 
+	void *mlx_win;
 	double           zoom_factor;
 	double			x;
 	double			y;
-
-}f_list;
-
-typedef struct	s_data {
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}				t_data;
+	
+}f_list;
+
 
 int main(int ac , char **av);
 #endif
