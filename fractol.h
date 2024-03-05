@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:01:30 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/05 02:51:57 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/05 04:53:31 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_list
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
+	int		color;
 	
 }f_list;
 
