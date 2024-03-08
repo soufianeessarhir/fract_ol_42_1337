@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:01:30 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/08 04:53:28 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/08 09:00:16 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,13 @@ typedef struct s_list
 	double i_max;
 	double i_min;
 	
-}f_list;
+}t_list;
 
 
 int main(int ac , char **av);
+int get_color(int iter);
+void	my_mlx_pixel_put(t_list *data, int x, int y, int color);
+void rebuild(t_list *fractol);
+void draw_frct_m(t_list *fractol) ;
+
 #endif
