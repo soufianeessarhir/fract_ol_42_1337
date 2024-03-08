@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:00:48 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/05 05:13:16 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/08 01:24:32 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,9 @@ int main(int ac , char **av)
 	if (ac > 0)
 	{
 		f_list fractol;
-		fractol.zoom_factor = 1; 
+		fractol.zoom_factor = 1;
+		fractol.off_x = 0;
+		fractol.off_y = 0; 
 		fractol.mlx = mlx_init(); 
 		fractol.mlx_win =  mlx_new_window(fractol.mlx, 800, 800, "Hello world!"); 
 		fractol.img = mlx_new_image(fractol.mlx, 800, 800); 
