@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:01:30 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/08 01:23:54 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/08 04:53:28 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,12 @@ typedef struct s_list
 	int		color;
 	double off_x;
 	double off_y;
+	int height;
+	int width;
+	double r_max;
+	double r_min;
+	double i_max;
+	double i_min;
 	
 }f_list;
 

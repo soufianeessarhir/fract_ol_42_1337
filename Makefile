@@ -9,7 +9,7 @@ OBJECTS = $(SOURCES:.c=.o)
 #B_OBJECTS = $(BSOURCES:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror 
 RM =rm -f
 
 
