@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 07:47:39 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/08 08:58:18 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/08 10:21:00 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int get_color(int iter)
 	if(iter == 80)
 		iter = 0;
 	
-	color = (0x00FDFFFC >> 8) * iter;
+	color = (0x00A020F0 >> 3) *( iter * 1000);
 	iter++;
 
 	return color;		

@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:00:48 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/08 09:05:35 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/08 10:06:46 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,28 +109,31 @@ int key_hook(int keycode, t_list *fractol)
 	{
 		fractol->i_min += 0.1;
 		fractol->i_max += 0.1;
-		rebuild(fractol);
 	}
 	if (keycode == 125)
 	{
 		fractol->i_max -= 0.1;
 		fractol->i_min -= 0.1;
-		rebuild(fractol);
 	}
 	if (keycode == 124)
 	{
 		fractol->r_max -= 0.1;
 		fractol->r_min -= 0.1;
-		rebuild(fractol);
 	}
 	if (keycode == 123)
 	{
 		fractol->r_max += 0.1;
 		fractol->r_min += 0.1;
-		rebuild(fractol); 
 	}
+	rebuild(fractol); 
 	helper(keycode,fractol);
-	printf("%d\n",keycode);
+	return 0;
+}
+int destroy(t_list *fractol)
+{
+	mlx_destroy_image(fractol->mlx, fractol->img);
+	mlx_destroy_window(fractol->mlx, fractol->mlx_win);
+	exit(0);
 	return 0;
 }
 int main(int ac , char **av) 
@@ -152,6 +155,7 @@ int main(int ac , char **av)
 		fractol.addr = mlx_get_data_addr(fractol.img,&fractol.bits_per_pixel,&fractol.line_length,&fractol.endian); 
 		mlx_mouse_hook(fractol.mlx_win, mouse_hook, &fractol); 
 		mlx_key_hook (fractol.mlx_win, &key_hook, &fractol);
+		mlx_hook(fractol.mlx_win,17,0,&destroy,&fractol);
 		draw_frct_m(&fractol);
 		mlx_put_image_to_window((fractol).mlx,(fractol).mlx_win, (fractol).img, 0, 0); 
 		mlx_loop(fractol.mlx); 
