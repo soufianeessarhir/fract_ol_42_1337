@@ -1,5 +1,6 @@
 NAME = fractol
 SOURCES = main.c\
+		  utils.c\
 
 #BSOURCES =  
     
