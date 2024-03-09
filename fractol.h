@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:01:30 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/08 09:00:16 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/09 04:21:32 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,18 @@ typedef struct s_list
 	double r_min;
 	double i_max;
 	double i_min;
+	int    r_color;
 	
 }t_list;
 
 
-int main(int ac , char **av);
-int get_color(int iter);
+int		main(int ac , char **av);
+int		get_color(int iter,t_list *fractol);
 void	my_mlx_pixel_put(t_list *data, int x, int y, int color);
-void rebuild(t_list *fractol);
-void draw_frct_m(t_list *fractol) ;
+void	rebuild(t_list *fractol);
+void	draw_frct_m(t_list *fractol);
+double	map(double x, double in_min, double in_max, double out_min, double out_max); 
+t_list init_data_fractol(void);
+
 
 #endif
