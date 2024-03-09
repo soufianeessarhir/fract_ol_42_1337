@@ -1,7 +1,8 @@
 NAME = fractol
 SOURCES = main.c\
 		  utils.c\
-
+		  ft_strncmp.c\
+		  ft_atod.c\
 #BSOURCES =  
     
     
