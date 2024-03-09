@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 07:47:39 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/09 04:21:20 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/09 06:06:12 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ t_list init_data_fractol(void)
 		fractol.r_max = 2;
 		fractol.r_min = -2;
 		fractol.r_color = 6000;
+		fractol.r_j = 0;
+		fractol.i_j = 0;
 		fractol.mlx = mlx_init(); 
 		fractol.mlx_win =  mlx_new_window(fractol.mlx, 800, 800, "Hello world!"); 
 		fractol.img = mlx_new_image(fractol.mlx, 800, 800); 
