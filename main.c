@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:00:48 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/09 07:21:38 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/09 09:43:04 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,6 +151,13 @@ int destroy(t_list *fractol)
 	exit(0);
 	return 0;
 }
+void which_fract()
+{
+	write(1, "\nincorrect param you can try again using one of the folwoing\n",62);
+	write(1, "\n     =>mandelbrot\n",20);
+	write(1,"     =>julia\n\n",15);
+	exit(0);
+}
 int main(int ac , char **av) 
 {
 	if (ac > 1)
@@ -168,7 +175,9 @@ int main(int ac , char **av)
 			fractol.r_j = ft_atod(av[2]);
 			fractol.i_j = ft_atod(av[3]);
 			draw_frct_m(&fractol);
-		} 
+		}
+		else
+			which_fract(); 
 		mlx_put_image_to_window((fractol).mlx,(fractol).mlx_win, (fractol).img, 0, 0); 
 		mlx_loop(fractol.mlx); 
 	}

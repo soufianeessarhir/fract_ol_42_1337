@@ -6,36 +6,37 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 06:13:34 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/09 06:56:53 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/09 09:09:02 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-double	ft_atod(const char *str)
+double ft_atod(const char *str)
 {
-	double	nb;
-	double	n;
-	int			s;
+    long long int result;
+    double  decimal_place;
+   	double         sign;
 
-	nb = 0;
-	s = 1;
-	n = 1;
-	if (*str == '-' || *str == '+')
+    result = 0.0;
+    sign = 1.0;
+    decimal_place = 1.0;
+    if (*str == '-')
+    {
+        sign = -1;
+        str++;
+    }
+    while (*str && ((*str >= '0' && *str <= '9') || *str == '.'))
 	{
-		if (*str == '-')
-			s = -1;
-		str++;
-	}
-	while (*str && ((*str >= '0' && *str <= '9') || *str == '.'))
-	{
-		if (*str == '.')
+        if (*str == '.')
+            decimal_place = 1;
+		else
 		{
-			n = 10;
-			str++;
-		}
-		nb = nb * 10 + (*str - '0') / n;
-		str++;
-	}
-	return (s * nb);
+        	result = result * 10 + (*str - '0');
+        	if (decimal_place)
+                decimal_place *= 10;
+        }
+       	str++;
+    }
+    return (sign * (double)result / (double)decimal_place);
 }
