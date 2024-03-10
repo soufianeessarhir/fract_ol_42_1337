@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 07:47:39 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/10 12:27:43 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/10 12:35:03 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
 int get_color(int iter ,t_list *fractol)
 {
@@ -42,7 +42,7 @@ void rebuild(t_list *fractol)
 }
 double map(double x, double in_min, double in_max, double out_min, double out_max) 
 {
-  return (((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min) );
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
 t_list init_data_fractol(void)
@@ -59,7 +59,7 @@ t_list init_data_fractol(void)
 		fractol.r_color = 6000;
 		fractol.r_j = 0;
 		fractol.i_j = 0;
-		fractol.zoom_factor = 1;
+		fractol.if3d = 1;
 		fractol.mlx = mlx_init(); 
 		fractol.mlx_win =  mlx_new_window(fractol.mlx, 800, 800, "Hello world!"); 
 		fractol.img = mlx_new_image(fractol.mlx, 800, 800); 
