@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:01:30 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/09 08:30:39 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/10 09:46:16 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,13 @@ typedef struct s_list
 	
 }t_list;
 
+typedef struct d_atod
+{
+	double result;
+    double  decimal_place;
+   	double         sign;
+}t_atod;
+
 
 int		main(int ac , char **av);
 int		get_color(int iter,t_list *fractol);
@@ -58,6 +65,8 @@ void	draw_frct_m(t_list *fractol);
 double	map(double x, double in_min, double in_max, double out_min, double out_max); 
 t_list	init_data_fractol(void);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-double	ft_atod(const char *str);
+double	ft_atod(char *str);
+int ft_parcing(char *av);
+size_t	ft_strlen(const char *s);
 
 #endif

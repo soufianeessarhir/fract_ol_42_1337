@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:00:48 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/09 09:43:04 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/10 10:11:18 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,28 +158,44 @@ void which_fract()
 	write(1,"     =>julia\n\n",15);
 	exit(0);
 }
+void draw_julia(int ac ,char **av,t_list *fractol)
+{
+
+			if (ac == 2)
+			{
+				fractol->j = 'j';
+				draw_frct_m(fractol);
+			}
+			else if (ft_parcing(av[2]) && ft_parcing(av[3]) && ac == 4)
+			{
+			
+				fractol->j = 'j';
+				fractol->r_j = ft_atod(av[2]);
+				fractol->i_j = ft_atod(av[3]);
+				draw_frct_m(fractol);
+			}
+			else
+				which_fract(); 
+}
 int main(int ac , char **av) 
 {
-	if (ac > 1)
+	if (ac > 1 && ac < 5)
 	{
 		t_list fractol;
 		fractol = init_data_fractol();
+		if (ft_strncmp(av[1],"mandelbrot",10) == 0 && ft_strlen(av[1]) == 10)
+			draw_frct_m(&fractol);
+		else if((ac == 2 || ac == 4) && ft_strncmp(av[1],"julia",5) == 0 && ft_strlen(av[1]) == 5)
+			draw_julia(ac, av, &fractol);
+		else
+			which_fract(); 
 		mlx_mouse_hook(fractol.mlx_win, mouse_hook, &fractol); 
 		mlx_key_hook (fractol.mlx_win, &key_hook, &fractol);
 		mlx_hook(fractol.mlx_win,17,0,&destroy,&fractol);
-		if (ft_strncmp(av[1],"mandelbrot",10) == 0)
-			draw_frct_m(&fractol);
-		else if(ft_strncmp(av[1],"julia",5) == 0)
-		{
-			fractol.j = 'j';
-			fractol.r_j = ft_atod(av[2]);
-			fractol.i_j = ft_atod(av[3]);
-			draw_frct_m(&fractol);
-		}
-		else
-			which_fract(); 
 		mlx_put_image_to_window((fractol).mlx,(fractol).mlx_win, (fractol).img, 0, 0); 
 		mlx_loop(fractol.mlx); 
 	}
+	else
+		which_fract();
 	return 0;
 }
