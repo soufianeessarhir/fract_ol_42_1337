@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   fractol_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:01:30 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/10 12:43:07 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/10 12:42:46 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-#define FRACTOL_H
+#ifndef FRACTOL_BONUS_H
+#define FRACTOL_BONUS_H
 
 #include <mlx.h>
 # include <stdio.h>
@@ -46,6 +46,7 @@ typedef struct s_list
 	double r_j;
 	double i_j;
 	char j;
+	int if3d;
 	
 }t_list;
 
@@ -73,5 +74,6 @@ int key_hook(int keycode, t_list *fractol);
 int destroy(t_list *fractol);
 void which_fract();
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
+
 
 #endif

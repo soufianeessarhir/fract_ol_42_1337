@@ -1,16 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   utils_bonus1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/09 05:33:10 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/09 05:35:55 by sessarhi         ###   ########.fr       */
+/*   Created: 2024/03/10 09:44:30 by sessarhi          #+#    #+#             */
+/*   Updated: 2024/03/10 11:15:23 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+void which_fract()
+{
+	write(1, "\nincorrect param you can try again using one of the folwoing\n",62);
+	write(1, "\n     =>mandelbrot\n",20);
+	write(1,"     =>julia\n\n",15);
+	exit(0);
+}
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
