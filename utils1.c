@@ -6,21 +6,11 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 09:44:30 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/10 15:12:13 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/11 05:33:57 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 void	which_fract(void)
 {

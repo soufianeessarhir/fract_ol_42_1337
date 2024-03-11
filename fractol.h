@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:01:30 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/10 15:15:02 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/11 05:34:46 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,8 @@ void	rebuild(t_list *fractol);
 void	draw_frct_m(t_list *fractol);
 double	map(double x, double in_max, double out_min, double out_max);
 t_list	init_data_fractol(void);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
 double	ft_atod(char *str);
 int		ft_parcing(char *av);
-size_t	ft_strlen(const char *s);
 int		mouse_hook(int keycode, int x, int y, t_list *fractol);
 int		key_hook(int keycode, t_list *fractol);
 int		destroy(t_list *fractol);
