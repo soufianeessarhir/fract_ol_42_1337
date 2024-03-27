@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:00:48 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/11 05:43:00 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/27 03:21:10 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	check_squaring(double a, double b, t_list *fractol)
 	int		i;
 
 	i = 0;
-	while ((a * a + b * b < 4) && i < 80)
+	while ((a * a + b * b < fractol->r_max * fractol->r_max) && i < 80)
 	{
 		tmp = a;
 		a = a * a - b * b;
