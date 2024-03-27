@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:00:48 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/27 03:21:10 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/27 05:53:55 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	check_squaring(double a, double b, t_list *fractol)
 		if (fractol->j == 'j')
 		{
 			a += fractol->r_j;
-			b += fractol->i_j;
+			b -= fractol->i_j;
 		}
 		else
 		{

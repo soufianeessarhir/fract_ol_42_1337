@@ -15,8 +15,11 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	$(CC) $(OBJECTS) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	
+%_bonus.o: %_bonus.c fractol_bonus.h
+	$(CC) $(CFLAGS) -Imlx -c $< -o $@
 
-%.o: %.c
+%.o: %.c fractol.h
 	$(CC) $(CFLAGS) -Imlx -c $<
 
 bonus: $(BNAME)
@@ -24,8 +27,6 @@ bonus: $(BNAME)
 $(BNAME): $(B_OBJECTS)
 	$(CC) $(B_OBJECTS) -lmlx -framework OpenGL -framework AppKit -o $(BNAME)
 
-%_bonus.o: %_bonus.c
-	$(CC) $(CFLAGS) -Imlx -c $< -o $@
 
 clean:
 	$(RM) $(OBJECTS) $(B_OBJECTS)
