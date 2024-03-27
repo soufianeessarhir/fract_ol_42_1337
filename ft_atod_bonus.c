@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 06:13:34 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/10 14:00:13 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/27 03:22:27 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,14 @@ int	ft_parcing(char *av)
 	return (1);
 }
 
-char	*skiping(char *str, t_atod f)
+char	*skiping(char *str, t_atod *f)
 {
 	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
 	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
-			f.sign = -1;
+			f->sign = -1;
 		str++;
 	}
 	return (str);
@@ -78,7 +78,7 @@ double	ft_atod(char *str)
 	f.result = 0.0;
 	f.sign = 1.0;
 	f.decimal_place = 0.0;
-	str = skiping(str, f);
+	str = skiping(str, &f);
 	while (*str != '\0' && ((*str >= '0' && *str <= '9') || *str == '.'))
 	{
 		if (*str == '.')
