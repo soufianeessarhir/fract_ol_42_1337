@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:00:48 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/27 06:08:28 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/03/28 23:41:57 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	check_squaring(double a, double b, t_list *fractol)
 	int		i;
 
 	i = 0;
-	while ((a * a + b * b < fractol->r_max * fractol->r_max) && i < 80)
+	while ((a * a + b * b <= fractol->r_max * fractol->r_max) && i < 80)
 	{
 		tmp = a;
 		a = a * a - b * b;
@@ -26,7 +26,7 @@ int	check_squaring(double a, double b, t_list *fractol)
 		if (fractol->j == 'j')
 		{
 			a += fractol->r_j;
-			b -= fractol->i_j;
+			b += fractol->i_j;
 		}
 		else
 		{
@@ -52,7 +52,7 @@ void	draw_frct_m(t_list *fractol)
 				fractol->r_max) * fractol->zoom_factor;
 		while (j < 800)
 		{
-			fractol->y = map(j, 800, fractol->i_min,
+			fractol->y = map(800 - j, 800, fractol->i_min,
 					fractol->i_max) * fractol->zoom_factor;
 			if (check_squaring(fractol->x, fractol->y, fractol) <= 0)
 				my_mlx_pixel_put(fractol, i, j,
