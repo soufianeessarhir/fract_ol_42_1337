@@ -6,7 +6,7 @@
 /*   By: sessarhi <sessarhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 10:53:24 by sessarhi          #+#    #+#             */
-/*   Updated: 2024/03/10 13:44:50 by sessarhi         ###   ########.fr       */
+/*   Updated: 2024/04/03 03:09:58 by sessarhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ int	mouse_hook(int keycode, int x, int y, t_list *fractol)
 	{
 		fractol->r_min += (x * fractol->off_x) * zoom_amount;
 		fractol->r_max -= ((800 - x) * fractol->off_x) * zoom_amount;
-		fractol->i_max -= ((800 - y) * fractol->off_y) * zoom_amount;
-		fractol->i_min += (y * fractol->off_y) * zoom_amount;
+		fractol->i_max -= (y * fractol->off_y) * zoom_amount;
+		fractol->i_min += ((800 - y) * fractol->off_y) * zoom_amount;
 	}
 	else if (keycode == 5)
 	{
 		fractol->r_min -= (x * fractol->off_x) * zoom_amount;
 		fractol->r_max += ((800 - x) * fractol->off_x) * zoom_amount;
-		fractol->i_max += ((800 - y) * fractol->off_y) * zoom_amount;
-		fractol->i_min -= (y * fractol->off_y) * zoom_amount;
+		fractol->i_max += (y * fractol->off_y) * zoom_amount;
+		fractol->i_min -= ((800 - y) * fractol->off_y) * zoom_amount;
 	}
 	rebuild(fractol);
 	return (0);
